@@ -1,13 +1,13 @@
 <template name="community">
 	<div class="template-community">
 		<div class="page-header">
-			<h1>Community Scripture Responses</h1>
+			<h2>Community Scripture Responses</h2>
 		</div>
 		{{#each posts}}
 			<div class="feed response">
 				<img src='../images/images.jpg' class="user-img" alt="" />
-				<p class="user-name">{{createdBy}} <br />
-				<span class="time-since-dataed">{{createdAt}}</span></p>
+				<p class="user-name">id:{{createdBy}} <br />
+				<span class="time-since-dataed">{{formattedDate}}</span></p>
 				<p class="activity-label"><a class="activity-name">activity name</a></p>
 				<p class="response-text">{{text}}</p>
 				<a href="#" class="options">

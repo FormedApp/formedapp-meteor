@@ -17,5 +17,8 @@ Template.journal.helpers({
       } else {
           return false;
       }
+  },
+  formattedDate: function(){
+    return moment(this.createdAt).fromNow()
   }
 });

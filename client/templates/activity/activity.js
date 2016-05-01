@@ -20,7 +20,7 @@ Template.activity.events({
  
     // Clear form
     target.text.value = '';
-    // Router.go('/community');
+    Router.go('/community');
     Bert.alert({
 	  title: 'Post Added',
 	  message: 'It worked!',

@@ -1,0 +1,238 @@
+// pallete
+@dark-red: #c43929;
+@yellow: #f4c715;
+@light-red: #231f20;
+@green: #17b89e;
+@orange: #f59c1e;
+@shaded-red: #a22e1e;
+@shaded-yellow: #c8a512;
+@grey: #d1d6d8;
+
+//fonts
+@source: 'Source Sans Pro', sans-serif;
+@patua: 'Patua One', cursive;
+
+.btn-primary {
+	background: @dark-red;
+	border: @dark-red;
+	&:hover,&:focus {
+		background: @shaded-red;
+		border: @dark-red;
+	}
+}
+
+.community{
+	background: @green;
+}
+.activity{
+	background: @dark-red;
+}
+.journal{
+	background: @orange;
+}
+.user{
+	background: @yellow;
+}
+.leader{
+	background: @shaded-red;
+}
+.community, .activity, .journal, .user, .leader{
+	&:hover,&:focus {
+		opacity: .9;
+	}
+	&.active {
+		
+	}
+}
+.navbar-default .navbar-nav > .active > a {
+	background-color: inherit !important;
+	color: #fff !important;
+}
+////
+//main
+////
+body {
+	background: @grey;
+	font-family: @source;
+}
+a:hover {
+	text-decoration: none; 
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: @patua;
+}
+svg {
+	width: 35px;
+}
+
+
+////
+//nav
+////
+#login img {
+    padding: 30px 0;
+}
+.navbar {
+	background: @dark-red;
+}
+.navbar-brand {
+	padding: 7px 0 0 12px;
+	margin: 0;
+	
+}
+
+.nav>li {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.8em;
+    font-family: @patua;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    background-color: initial;
+}
+
+.view-title {
+    font-size: 2.6em;
+    margin: 5px 10px 0 87px;
+    color: #fff;
+    display: inline-block;
+    font-family: @patua;
+    text-align: center; 
+}
+
+.fa-ellipsis-v {
+	font-size: 2em;
+	color: @yellow;
+}
+
+.menu {
+	.btn {
+		width: 100%; 
+	}
+}
+
+////
+// pages
+////
+div.activity{
+	background: #FFF;
+	padding: 20px;
+	
+	h1 {
+		font-size: 2.8em;
+	}
+	p {
+		margin-bottom: 15px;
+		font-size: 23px;
+		font-weight: 200;
+	}
+	.activity-label {
+		color: #ccc; 
+	}
+	.activity-nav-left, .activity-nav-right {
+		font-size: 1.3em;
+		float: right;
+		display: block;
+		position: absolute;
+		bottom: 10px;  
+	}
+	.activity-nav-left {
+		left: 10px;
+	}
+	.activity-nav-right {
+		right: 10px;
+	}
+	&.receive {
+		.activity-label {
+			margin: 10px 0 -20px 0;
+		    display: block;
+		}
+	}
+	&.reflect {
+
+	}
+	&.response {
+		
+	}
+	&.complete {
+		.fa-check {
+		    margin: 0 auto;
+		    text-align: center;
+		    color: green;
+		    font-size: 6em;
+		    opacity: .4;
+	        margin: 10% 0 0 0;
+		}
+	}
+}
+
+.feed {
+	margin: 0 0 20px 0; 
+	&.response {
+		border: 1px solid #eee;
+		padding: 20px;
+		background: #fff;
+		
+		.user-name, .user-img { 
+			float: left;
+			position: block;
+		}
+		.user-img {
+			width: 65px; 
+		}
+		.user-name {
+			font-family: @patua;
+			padding: 20px 0 0 10px;
+		}
+		.time-since-posted {
+			font-family: @source;
+			opacity: .45;
+		}
+		.activity-name {
+			float: right;
+			margin: -7px 0 0 0;
+		}
+		.response-text {
+			padding: 65px 3px 30px 3px;
+		}
+		.options-open {
+			float: right;
+			position: relative;
+			bottom: 14px;
+			right: -16px;
+			
+			a {
+				padding:0 12px 0 0;
+				font-size: 1.2em;
+			}
+		}
+		.fa-ellipsis-v {
+			color: @yellow;
+		    position: relative;
+		    bottom: 18px;
+		    right: 0;
+		    float: right;
+		}
+	}
+}
+
+.track {
+	&.activity {
+		background: @dark-red;
+		color: #FFF; 
+		text-align: center;
+		padding: 10px;
+		margin: 0 0 24px;
+		&:hover {
+			cursor: pointer;
+		}
+		
+		.activity-name {
+			padding: 10px 0 18px 0; 
+		}
+		.track-name {
+			margin: -10px 0 0 0;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+<template name="journal">
+	<div class="template-journal">
+		<div class="page-header">
+			<h1>My Scripture Responses</h1>
+		</div>
+		{{#each posts}}
+			<div class="feed response">
+				<img src='../images/images.jpg' class="user-img" alt="" />
+				<p class="user-name">{{createdBy}} <br />
+				<span class="time-since-dataed">{{createdAt}}</span></p>
+				<p class="activity-label"><a class="activity-name">activity name</a></p>
+				<p class="response-text">{{text}}</p>
+				<a href="#" class="options">
+		          <i class="fa fa-ellipsis-v"></i>
+		        </a>
+		        <a href="#" class="options hidden">
+		          <i class="fa fa-pencil"></i> <i class="fa fa-trash"></i>
+		        </a>
+			</div>
+		{{/each}}
+	</div>
+</template>

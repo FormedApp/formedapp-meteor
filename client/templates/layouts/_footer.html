@@ -1,0 +1,20 @@
+<template name="_footer">
+  <footer>
+    <div class="container">
+      <p class="text-center text-muted">
+        &copy; Copyright 2016 Formed
+      </p>
+    </div>
+  </footer>
+  <script>
+  $('#navbar li, #navbar a, .navbar-brand').click(function() {
+      var navbar_toggle = $('.navbar-toggle');
+      if (navbar_toggle.is(':visible')) {
+        navbar_toggle.trigger('click');
+      }
+  });
+  $('.response .options').click(function() {
+      this.toggle();
+  });
+  </script>
+</template>

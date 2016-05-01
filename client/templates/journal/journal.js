@@ -22,3 +22,7 @@ Template.journal.helpers({
     return moment(this.createdAt).fromNow()
   }
 });
+
+Template.journal.events({
+  
+});

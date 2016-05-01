@@ -1,0 +1,13 @@
+<template name="post">
+	<div class="feed response">
+		<img src='../images/images.jpg' class="user-img" alt="" />
+		<p class="user-name">id: {{createdBy}} 
+			<br /><span class="time-since-dataed">{{formattedDate}}</span>
+		</p>
+		<p class="activity-label"><a class="activity-name">activity name</a></p>
+		<p class="response-text">{{text}}</p>
+		{{#if isAuthor}}
+			<a href="#" class="options options-open"><i class="fa fa-trash delete-post"></i></a>
+	    {{/if}}
+	</div>
+</template>

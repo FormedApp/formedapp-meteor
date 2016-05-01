@@ -7,6 +7,10 @@ Router.route('/dashboard', {
   controller: 'DashboardController'
 });
 
+Router.route('/user', {
+  name: 'user'
+});
+
 Router.route('/activity', {
   name: 'activity'
 });

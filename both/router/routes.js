@@ -20,5 +20,5 @@ Router.route('/journal', {
 });
 
 Router.plugin('ensureSignedIn', {
-  only: ['dashboard','activity']
+  only: ['dashboard','activity','journal']
 });

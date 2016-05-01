@@ -21,6 +21,6 @@ Template.activity.events({
     // Clear form
     target.text.value = '';
     Router.go('/community');
-	Bert.alert( 'Success! Post added.', 'success' );
+	Bert.alert( 'Success! Your post was added.', 'success' );
   },
 });

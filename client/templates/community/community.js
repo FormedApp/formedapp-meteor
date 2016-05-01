@@ -1,6 +1,6 @@
 Template.community.onCreated(function(){
     // Subscribe to our users publication.
-    this.subscribe('posts', Session.get('slug'));
+    this.subscribe('posts');
 });
 
 Template.community.rendered = function() {

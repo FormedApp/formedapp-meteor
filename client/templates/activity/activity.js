@@ -22,10 +22,11 @@ Template.activity.events({
     target.text.value = '';
     Router.go('/community');
     Bert.alert({
-	  title: 'Post Added',
-	  message: 'It worked!',
+	  title: 'Success!',
+	  message: 'Post added. No sweat. :)',
 	  type: 'success',
-	  style: 'growl-top-right'
+	  style: 'growl-top-right',
+	  icon: 'fa-plus'
 	});
   },
 });

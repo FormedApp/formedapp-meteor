@@ -21,12 +21,6 @@ Template.activity.events({
     // Clear form
     target.text.value = '';
     Router.go('/community');
-    Bert.alert({
-	  title: 'Success!',
-	  message: 'Post added. No sweat. :)',
-	  type: 'success',
-	  style: 'growl-top-right',
-	  icon: 'fa-plus'
-	});
+	Bert.alert( 'Success! Post added.', 'success' );
   },
 });

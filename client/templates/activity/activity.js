@@ -20,7 +20,12 @@ Template.activity.events({
  
     // Clear form
     target.text.value = '';
-    Bert.alert("Great! Your post was added.", "success");
-    Router.go('/community');
+    // Router.go('/community');
+    Bert.alert({
+	  title: 'Post Added',
+	  message: 'It worked!',
+	  type: 'success',
+	  style: 'growl-top-right'
+	});
   },
 });

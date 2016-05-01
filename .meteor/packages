@@ -6,6 +6,7 @@
 meteor-platform
 less
 accounts-password
+accounts-base
 useraccounts:bootstrap
 alanning:roles
 zimme:iron-router-active

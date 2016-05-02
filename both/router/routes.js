@@ -23,6 +23,10 @@ Router.route('/journal', {
   name: 'journal'
 });
 
+Router.route('/signup', {
+  name: 'entrySignUp'
+});
+
 Router.plugin('ensureSignedIn', {
   only: ['dashboard','activity','journal']
 });

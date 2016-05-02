@@ -20,4 +20,7 @@ https://github.com/Differential/meteor-boilerplate
 ##Extra Todos
 - [ ] add Facebook oAuth
 - [ ] add payment gateway (Stripe)
+- [ ] limit free account to 5 users
 - [ ] add ability to purchase new tracks
+- [ ] add list of users to admin dashboard
+- [ ] add lastLogin to user collection

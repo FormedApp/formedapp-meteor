@@ -21,6 +21,6 @@ Template.activities.events({
     // Clear form
     target.text.value = '';
     Router.go('/journal');
-	Bert.alert( 'Success! Your post was added.', 'success' );
+    Bert.alert( 'Success! Your post was added to your personal jounral.', 'success' );
   },
 });

@@ -12,7 +12,7 @@ https://github.com/Differential/meteor-boilerplate
 - [ ] setup user/leader invitation [option](http://stackoverflow.com/questions/20990550/how-to-make-sign-up-invitation-only)
 - [ ] add Activities creation/responses (single linear track)
 
-<----- ----- BETA ----- ----->
+<----- ------ BETA ------ ----->
 
 - [ ] add Track and Activities creation
 - [ ] ability to assign a Track to a group

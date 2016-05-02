@@ -1,15 +1,17 @@
+//login rules
+Router.onBeforeAction(function () {
+   if (!Meteor.userId()) {
+       Router.go("/");
+   } else {
+       this.next();
+   }
+},{
+   // except: ['home']
+   only: ['dashboard','activity','journal']
+});
+
 Router.route('/', {
-  name: 'home',
-  onBeforeAction: function () {
-    if (! Meteor.user()) {
-      if (Meteor.loggingIn()) {
-      } else {
-        Router.go('signin');
-      }
-    } else {
-    	Router.go('community');
-    }
-  }
+  name: 'home'
 });
 
 Router.route('/dashboard', {

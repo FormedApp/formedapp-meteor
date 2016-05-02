@@ -6,4 +6,5 @@ Posts.helpers({
 
 Posts.before.insert(function (userId, doc) {
   doc.createdAt = moment().toDate();
+  doc.private = true;
 });

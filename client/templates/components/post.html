@@ -7,7 +7,10 @@
 		<p class="activity-label"><a class="activity-name">activity name</a></p>
 		<p class="response-text">{{text}}</p>
 		{{#if isAuthor}}
-			<a href="#" class="options options-open"><i class="fa fa-trash delete-post"></i></a>
+			<div class="options options-open">
+				<a href="#"><i class="fa fa-{{privateState}} toggle-private"></i></a> 
+				<a href="#"><i class="fa fa-trash delete-post"></i></a>
+			</div>
 	    {{/if}}
 	</div>
 </template>

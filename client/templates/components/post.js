@@ -11,13 +11,20 @@ Template.post.onCreated(function(){
 Template.post.helpers({
   isAuthor: function () {
     return this.createdBy === Meteor.userId();
+  },
+  privateState: function() {
+    if (this.private) {
+      return 'eye-slash';
+    } else {
+      return 'eye';
+    }
   }
 });
 
 Template.post.events({
-  // 'click .toggle-private': function () {
-  //   Meteor.call('setPrivate', this._id, !this.private);
-  // },
+  'click .toggle-private': function () {
+    Meteor.call('setPrivate', this._id, !this.private);
+  },
   'click .delete-post': function () {
     Meteor.call("deletePost", this._id, function (err, result) {
       if (!err) {

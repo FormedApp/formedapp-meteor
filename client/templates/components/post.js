@@ -18,6 +18,9 @@ Template.post.helpers({
     } else {
       return 'eye';
     }
+  },
+  formattedDate: function(){
+    return moment(this.createdAt).fromNow()
   }
 });
 

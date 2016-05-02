@@ -4,7 +4,7 @@
       <div class="col-md-6 col-md-offset-3 profile text-center">
         {{#if currentUser}}
         	{{#if ifFirstPost}}
-	        	<h1>Hi! Let's get started.</h1>
+	        	<h1>Hi, {{currentUser.profile.firstName}}! Let's get started.</h1>
 	        	<a href="/activities" class="btn btn-primary firstPost btn-block">Create your first post</a>
         	{{else}}
         	<a href="/community" class="btn btn-primary community btn-block"> View Community Posts</a>

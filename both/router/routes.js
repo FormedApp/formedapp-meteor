@@ -7,7 +7,7 @@ Router.onBeforeAction(function () {
    }
 },{
    // except: ['home']
-   only: ['dashboard','activity','journal']
+   only: ['dashboard','activities','journal']
 });
 
 Router.route('/', {

@@ -27,3 +27,4 @@ https://github.com/Differential/meteor-boilerplate
 - [ ] add list of users to admin dashboard
 - [ ] add lastLogin to user collection
 - [ ] don't delete Posts, but archive instead (add to Trash)
+- [ ] show new posts count since lastLogin (button or nav number badge)

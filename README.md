@@ -5,7 +5,7 @@ https://github.com/Differential/meteor-boilerplate
 
 ##ToDos
 - [x] implement designs (front end from Hackathon)
-- [x] setup user accounts
+- [x] setup user accounts (create/reset)
 - [x] add Post submission and delete/privacy options (community & journal)
 - [x] create admin dashboard
 - [ ] setup user roles (user/leader/pro/admin)
@@ -18,9 +18,10 @@ https://github.com/Differential/meteor-boilerplate
 - [ ] setup Pro dashboard
 
 ##Extra Todos
-- [ ] add Facebook oAuth
+- [ ] add Facebook oAuth login
 - [ ] add payment gateway (Stripe)
 - [ ] limit free account to 5 users
 - [ ] add ability to purchase new tracks
 - [ ] add list of users to admin dashboard
 - [ ] add lastLogin to user collection
+- [ ] don't delete Posts, but archive instead (add to Trash)

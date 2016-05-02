@@ -1,8 +1,8 @@
-Template.activity.rendered = function() {
+Template.activities.rendered = function() {
 
 };
 
-Template.activity.events({
+Template.activities.events({
 'submit .new-post':function(event) {
     // Prevent default browser form submit
     event.preventDefault();
@@ -20,7 +20,7 @@ Template.activity.events({
  
     // Clear form
     target.text.value = '';
-    Router.go('/community');
+    Router.go('/journal');
 	Bert.alert( 'Success! Your post was added.', 'success' );
   },
 });

@@ -3,9 +3,13 @@
     <div class="container">
       <div class="col-md-6 col-md-offset-3 profile text-center">
         {{#if currentUser}}
-        	<a href="/community" class="btn btn-primary community btn-block"> View the Community Posts</a>
-        	<br>
+        	{{#if ifFirstPost}}
+	        	<h1>Hi! Let's get started.</h1>
+	        	<a href="/activities" class="btn btn-primary firstPost btn-block">Create your first post</a>
+        	{{else}}
+        	<a href="/community" class="btn btn-primary community btn-block"> View Community Posts</a>
         	<a href="/journal" class="btn btn-primary journal btn-block"> View Your Posts</a>
+        	{{/if}}
         {{else}}
 			<div class="logo">
 	          <img src='../images/logo.png' width="150"/>

@@ -23,8 +23,8 @@ Router.route('/user', {
   name: 'user'
 });
 
-Router.route('/activity', {
-  name: 'activity'
+Router.route('/activities', {
+  name: 'activities'
 });
 
 Router.route('/community', {

@@ -5,7 +5,7 @@ AccountsTemplates.configureRoute('ensureSignedIn', {layoutTemplate: 'appLayout'}
 AccountsTemplates.configure({
     // Behavior
     confirmPassword: true,
-    sendVerificationEmail: true,
+    sendVerificationEmail: false,
     focusFirstInput: true,
 
     // Appearance

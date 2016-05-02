@@ -2,8 +2,8 @@
   <div class="template-user">
     <div class="container">
       <div class="col-md-6 col-md-offset-3 profile text-center">
-        <div class="logo">
-          <img src='../images/logo.png' width="150"/>
+        <div class="user-photo">
+          {{> avatar user=currentUser class="center" shape="circle" size="large"}}
         </div>
         <span>Name: </span> <span>{{ currentUser.profile.firstName }}</span><br />
         <span>Email: </span> <span>{{ currentUserEmail }}</span>

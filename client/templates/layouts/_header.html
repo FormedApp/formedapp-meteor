@@ -11,10 +11,10 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           {{#if currentUser}}
-          <li class="community {{ isActiveRoute regex='community' }}"><a href="{{ pathFor 'community' }}">Community</a></li>
-          <li class="activity {{ isActiveRoute regex='activity' }}"><a href="{{ pathFor 'activity' }}">Activity</a></li>
-          <li class="journal {{ isActiveRoute regex='journal' }}"><a href="{{ pathFor 'journal' }}">Journal</a></li>
-          <li class="user {{ isActiveRoute regex='user' }}"><a href="{{ pathFor 'user' }}">User</a></li>
+          <li class="community {{ isActiveRoute regex='community' }}" onclick="$('.navbar-toggle').click()"><a href="{{ pathFor 'community' }}">Community</a></li>
+          <li class="activity {{ isActiveRoute regex='activity' }}" onclick="$('.navbar-toggle').click()"><a href="{{ pathFor 'activity' }}">Activity</a></li>
+          <li class="journal {{ isActiveRoute regex='journal' }}" onclick="$('.navbar-toggle').click()"><a href="{{ pathFor 'journal' }}">Journal</a></li>
+          <li class="user {{ isActiveRoute regex='user' }}" onclick="$('.navbar-toggle').click()"><a href="{{ pathFor 'user' }}">User</a></li>
           <!-- <li class="leader"><a href="#">Leader</a></li> -->
           <li class="dropdown">
             <li><a href="#" data-action="logout" class="btn btn-default navbar-btn"><i class="fa fa-lock"></i> Sign Out</a></li>

@@ -5,13 +5,13 @@ AccountsTemplates.configureRoute('ensureSignedIn', {layoutTemplate: 'appLayout'}
 AccountsTemplates.configure({
     // Behavior
     confirmPassword: true,
-    sendVerificationEmail: false,
+    sendVerificationEmail: true,
     focusFirstInput: true,
 
     // Appearance
-    showAddRemoveServices: false,
+    showAddRemoveServices: true,
     showForgotPasswordLink: true,
-    showResendVerificationEmailLink: true,
+    showResendVerificationEmailLink: false,
 });
 
 AccountsTemplates.addField({

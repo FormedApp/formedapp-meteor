@@ -2,6 +2,7 @@
 Tracker.autorun(function () {
   Meteor.subscribe("postCounts");
   Meteor.subscribe("userCounts");
+  Meteor.subscribe("postTodayCounts");
 });
 
 Template.dashboard.rendered = function() {
@@ -15,6 +16,10 @@ Template.dashboard.helpers({
 	},
 	usersCount: function(){
 		var usersCount = Stats.findOne({_id: "userCounts"})
+		return usersCount.count
+	},
+	postsTodayCount: function(){
+		var usersCount = Stats.findOne({_id: "postTodayCounts"})
 		return usersCount.count
 	}
 });

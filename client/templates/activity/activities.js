@@ -10,11 +10,13 @@ Template.activities.events({
     // Get value from form element
     const target = event.target;
     const text = target.text.value;
+    const user = Meteor.user();
  
     // Insert a task into the collection
     Posts.insert({
       text: text,
       createdBy: Meteor.userId(),
+      createdByName: user.profile.firstName,
       createdAt: new Date() // current time
     });
  

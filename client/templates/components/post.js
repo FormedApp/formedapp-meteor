@@ -12,6 +12,9 @@ Template.post.helpers({
   isAuthor: function () {
     return this.createdBy === Meteor.userId();
   },
+  author: function(){
+    return this.createdByName;
+  },
   privateState: function() {
     if (this.private) {
       return 'eye-slash';

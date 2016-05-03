@@ -15,6 +15,9 @@ Template.post.helpers({
   author: function(){
     return this.createdByName;
   },
+  authorId: function(){
+    return this.createdBy;
+  },
   privateState: function() {
     if (this.private) {
       return 'eye-slash';

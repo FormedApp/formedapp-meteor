@@ -1,7 +1,7 @@
 <template name="post">
 	<div class="feed response">
 		<!-- <img src='../images/images.jpg' class="user-img" alt="" /> -->
-		{{> avatar user=currentUser class="user-img" shape="circle"}}
+		{{> avatar userId=authorId class="user-img" shape="circle"}}
 		<p class="user-name">{{author}} 
 			<br /><span class="time-since-dataed">{{formattedDate}}</span>
 		</p>

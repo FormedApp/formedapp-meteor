@@ -10,7 +10,7 @@ https://github.com/Differential/meteor-boilerplate
 - [x] create admin dashboard
 - [ ] setup user roles (user/teacher/leader/admin)
 - [ ] add organization name
-- [ ] setup user/leader invitation [option](http://stackoverflow.com/questions/20990550/how-to-make-sign-
+- [ ] setup user/leader invitation [option](http://stackoverflow.com/questions/20990550/how-to-make-sign-up-invitation-only)
 - [ ] ability to create groups
 - [ ] ability to invite current users to groups
 - [ ] add Activities creation/responses (single linear track)

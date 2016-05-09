@@ -36,7 +36,11 @@ Router.route('/journal', {
 });
 
 Router.route('/signup', {
-  name: 'entrySignUp'
+  name: 'signUp'
+});
+
+Router.route('/create-group', {
+  name: 'createGroup'
 });
 
 Router.plugin('ensureSignedIn', {

@@ -17,6 +17,7 @@ AccountsTemplates.configure({
 AccountsTemplates.addField({
     _id: 'firstName',
     displayName: "First Name",
+    placeholder: "First Name",
     type: 'text',
     required: true
 });

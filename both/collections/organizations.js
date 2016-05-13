@@ -1,4 +1,4 @@
-Organizations = new Mongo.Collection('[organizations]');
+Organizations = new Mongo.Collection('organizations');
 
 Organizations.helpers({
 

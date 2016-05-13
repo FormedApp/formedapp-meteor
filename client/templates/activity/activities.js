@@ -16,6 +16,7 @@ Template.activities.events({
     Posts.insert({
       text: text,
       createdBy: Meteor.userId(),
+      organization: Meteor.user().profile.organization,
       createdByName: user.profile.firstName,
       createdAt: new Date() // current time
     });

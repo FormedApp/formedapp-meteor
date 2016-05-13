@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/FormedApp/formedapp-meteor.png?label=ready&title=Ready)](https://waffle.io/FormedApp/formedapp-meteor)
 # Formed-meteor
 
 Meteor boilerplate used:

@@ -1,4 +1,7 @@
 [![Stories in Ready](https://badge.waffle.io/FormedApp/formedapp-meteor.png?label=ready&title=Ready)](https://waffle.io/FormedApp/formedapp-meteor)
+
+[![Throughput Graph](https://graphs.waffle.io/FormedApp/formedapp-meteor/throughput.svg)](https://waffle.io/FormedApp/formedapp-meteor/metrics)
+
 # Formed-meteor
 
 Meteor boilerplate used:

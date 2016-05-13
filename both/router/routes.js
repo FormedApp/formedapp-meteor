@@ -1,14 +1,13 @@
 //login rules
-Router.onBeforeAction(function () {
-  if (!Meteor.userId()) {
-    Router.go("/");
-  }
-  else {
+Router.onBeforeAction(function() {
+  if (! Meteor.userId()) {
+    Router.go('/');
+  } else {
     this.next();
   }
 },{
-// except: ['home']
-only: ['dashboard','activities','journal']
+// except: ['home','sign-up','sign-in']
+only: ['dashboard','activities','journal','community','create-organization']
 });
 
 Router.route('/', {
@@ -34,10 +33,6 @@ Router.route('/community', {
 
 Router.route('/journal', {
   name: 'journal'
-});
-
-Router.route('/signup', {
-  name: 'signUp'
 });
 
 Router.route('/create-organization', {

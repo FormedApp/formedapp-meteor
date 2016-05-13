@@ -40,5 +40,5 @@ Router.route('/create-organization', {
 });
 
 Router.plugin('ensureSignedIn', {
-  only: ['dashboard','activity','journal']
+  only: ['dashboard','activities','journal','community','create-organization']
 });

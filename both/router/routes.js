@@ -1,13 +1,14 @@
 //login rules
 Router.onBeforeAction(function () {
-   if (!Meteor.userId()) {
-       Router.go("/");
-   } else {
-       this.next();
-   }
+  if (!Meteor.userId()) {
+    Router.go("/");
+  }
+  else {
+    this.next();
+  }
 },{
-   // except: ['home']
-   only: ['dashboard','activities','journal']
+// except: ['home']
+only: ['dashboard','activities','journal']
 });
 
 Router.route('/', {
@@ -39,8 +40,8 @@ Router.route('/signup', {
   name: 'signUp'
 });
 
-Router.route('/create-group', {
-  name: 'createGroup'
+Router.route('/create-organization', {
+  name: 'createOrganization'
 });
 
 Router.plugin('ensureSignedIn', {

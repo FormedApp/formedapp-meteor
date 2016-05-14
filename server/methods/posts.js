@@ -12,7 +12,9 @@ Meteor.methods({
     }
 
     try {
-      Posts.remove(id);
+      Posts.update(id, {
+        $set: { deletedAt: new Date() }
+      });
       return;
     } catch (exception) {
       // If an error occurs, return it to the client.

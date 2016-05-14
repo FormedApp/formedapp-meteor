@@ -10,7 +10,10 @@ Template.journal.rendered = function() {
 Template.journal.helpers({
   posts: function(){
       // Show newest posts at the top
-      var getPosts = Posts.find({createdBy: Meteor.userId() }, { sort: { createdAt: -1 } });
+      var getPosts = Posts.find({
+        createdBy: Meteor.userId(),
+        deletedAt: { $exists: false }
+      }, { sort: { createdAt: -1 } });
 
       if (getPosts) {
           return getPosts;

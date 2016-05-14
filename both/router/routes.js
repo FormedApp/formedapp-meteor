@@ -39,6 +39,24 @@ Router.route('/create-organization', {
   name: 'createOrganization'
 });
 
+Router.route('/invite/:orgId', {
+  name: 'invite',
+  waitOn: function() {
+      var that = this;
+      return Meteor.subscribe('organizations');
+  },
+  data: function () { 
+    var orgid = this.params.orgId;
+    var data = Organizations.findOne({_id: orgid});
+    if(data !== undefined) {
+      return data ;
+    }
+    else {
+      this.render('notFound');
+    }
+  }
+});
+
 Router.plugin('ensureSignedIn', {
   only: ['dashboard','activities','journal','community','create-organization']
 });

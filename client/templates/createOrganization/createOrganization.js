@@ -25,6 +25,7 @@ Template.createOrganization.events({
         // most likely fail because it already exists
         Bert.alert( 'Fail! '+ organizationName +' already exists.', 'danger' ); 
         console.log ( error ); //info about what went wrong
+        errorState = true;
       }
       if ( result ) {
         Bert.alert( 'Success! '+ organizationName +' has been added as an organization.', 'success' );
@@ -33,10 +34,10 @@ Template.createOrganization.events({
       }
     });
 
-    // update user
-    Meteor.users.update(Meteor.userId(), { $set:{
-        "profile.organization": organizationName,
-    }});
+    if (!errorState) {
+      // update user
+      Meteor.call('updateUserOrganizationName', organizationName);
+    }
  
     // Clear form
     target.orgName.value = '';

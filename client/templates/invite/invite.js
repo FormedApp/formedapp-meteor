@@ -15,5 +15,8 @@ Template.invite.helpers({
 		} else {
 			return false;
 		}
+	},
+	ifCurrentUser: function() {
+		return Meteor.userId();
 	}
 });

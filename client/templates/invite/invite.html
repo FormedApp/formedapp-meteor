@@ -2,13 +2,18 @@
   <div class="template-invite">
     <div class="container">
       <div class="col-md-6 col-md-offset-3 profile text-center">
-      <p>Invite page</p>
        {{#if ifOrganizationExists}}
        <div class="logo">
          <img src='../images/logo.png' width="150"/>
+         <p>You've been invited!</p>
+         {{#if ifCurrentUser}}
+         <p>...but you are already login and are apart of an orginzation ({{ currentUser.profile.organization }}).</p>
+         {{else}}
+          <p>### need add register form ###</p>
+         {{/if}}
        </div>
        {{else}}
-       <p>This organization doesn't exist.</p>
+       <p>This organization doesn't exist. :(</p>
        {{/if}}
      </div>
    </div>

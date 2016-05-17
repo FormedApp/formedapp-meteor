@@ -6,7 +6,9 @@
           {{> avatar user=currentUser class="center" shape="circle" size="large"}}
         </div>
         <span>Name: </span> <span>{{ currentUser.profile.firstName }}</span><br />
-        <span>Email: </span> <span>{{ currentUserEmail }}</span>
+        <span>Email: </span> <span>{{ currentUserEmail }}</span><br />
+        <span>Organization: </span> <span>{{ currentUser.profile.organization }}</span><br>
+        <a href="{{ organizationInviteLink }}">Invite other users to your orgainization.</a>
       </div>
     </div>
   </div>

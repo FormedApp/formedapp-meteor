@@ -47,6 +47,7 @@ Router.route('/invite/:orgId', {
   },
   data: function () { 
     var orgid = this.params.orgId;
+    console.log(orgid);
     var data = Organizations.findOne({_id: orgid});
     if(data !== undefined) {
       return data ;

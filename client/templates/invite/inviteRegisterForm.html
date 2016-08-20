@@ -1,0 +1,55 @@
+<template name="inviteRegisterForm">
+  <div class="template-inviteRegisterForm">
+    <!-- <form id="login-form" action="action">
+      <div>
+        <input type="email" id="login-email" />
+        <input type="password" id="login-password" />
+        <input type="submit" id="login-button" value="Sign in" />
+      </div>
+    </form> -->
+
+    <div class="at-form">
+      <div class="at-title">
+        <h3>Create an Account</h3>
+      </div>
+      <div class="at-pwd-form text-left">
+        <form role="form" id="register-form" novalidate="" action="#" method="POST">
+          <fieldset>
+            <div class="at-input form-group">
+              <label class="control-label" for="account-email">
+                Email
+              </label>
+              <input type="email" class="form-control" id="account-email" name="at-field-email" placeholder="Email" autocapitalize="none" autocorrect="off">
+              <span class="help-block hide"></span>
+            </div>
+            <div class="at-input form-group">
+              <label class="control-label" for="account-password">
+                Password
+              </label>
+              <input type="password" class="form-control" id="account-password" name="at-field-password" placeholder="Password" autocapitalize="none" autocorrect="off">
+              <span class="help-block hide"></span>
+            </div>
+            <div class="at-input form-group">
+              <label class="control-label" for="account-firstName">
+                First Name
+              </label>
+              <input type="text" class="form-control" id="account-firstName" name="at-field-firstName" placeholder="First Name" autocapitalize="none" autocorrect="off">
+              <span class="help-block hide"></span>
+            </div>
+            <input type="hidden" id="account-organization-id" value="{{organizationId}}">
+            <input type="hidden" id="account-organization-name" value="{{organizationName}}">
+            <button type="submit" class="at-btn submit btn btn-lg btn-block btn-default" id="at-btn">
+              Register
+            </button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="at-signin-link">
+        <p>
+          If you already have an account
+          <a href="/sign-in" id="at-signIn" class="at-link at-signin">sign in</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</template>

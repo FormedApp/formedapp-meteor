@@ -14,7 +14,9 @@
             <p>Yet, you can invite others!</p>
             <p><button class="btn btn-primary btn-copy-link" data-clipboard-text="{{ organizationInviteLink }}">Invite Others</button></p>
           {{else}}
-          <p>### need to add register form ###</p>
+          <h1>{{ organizationName }} has invited you to Formed!</h1>
+          <p>Engage, experience, and study God's word together.</p>
+          {{> inviteRegisterForm}}
           {{/if}}
         </div>
         {{else}}

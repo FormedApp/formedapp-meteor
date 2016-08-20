@@ -30,6 +30,9 @@ Template.inviteRegisterForm.events({
 		var firstName = t.find('#account-firstName').value;
 
 		// Trim and validate the input
+		var isValidPassword = function(val) {
+     return val.length >= 6 ? true : false; 
+	  }
 
 		var options = {
 		    email: t.find('#account-email').value,
@@ -42,22 +45,30 @@ Template.inviteRegisterForm.events({
 		    },
 		};
 
-		Meteor.call('createOrganizationUser', options, function (err, result) {
-      if (err) {
-				// Inform the user that account creation failed
-				Bert.alert( 'Error: Failed to create account. Error:' + err, 'danger' ); 
-				console.log(err);
-			} 
-			else {
-				// Success. Account has been created and the user
-				// has logged in successfully.
-				Bert.alert( 'Success: Welcome to Formed, ' + firstName + '! Your account has been created.', 'success' );
-				// now login
-				Meteor.loginWithPassword(email, password);
-				// direct new user to different view
-				Router.go('user');
-			}
-    });
+		if (isValidPassword(password)) {
+    	//create user if password validates
+    	Meteor.call('createOrganizationUser', options, function (err, result) {
+	      if (err) {
+					// Inform the user that account creation failed
+					Bert.alert( 'Error: Failed to create account. Error:' + err, 'danger' ); 
+					console.log(err);
+				} 
+				else {
+					// Success. Account has been created and the user
+					// has logged in successfully.
+					Bert.alert( 'Success: Welcome to Formed, ' + firstName + '! Your account has been created.', 'success' );
+					// now login
+					Meteor.loginWithPassword(email, password);
+					// direct new user to different view
+					Router.go('home');
+				}
+	    });	
+	  }
+	  else {
+	  	Bert.alert( 'Error: Password needs to be longer.', 'danger' );
+	  	// show password field is not valid
+	  	$('#account-password').parent().addClass('has-error');
+	  }
 
 		return false;
 	}

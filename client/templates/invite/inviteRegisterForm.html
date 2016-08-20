@@ -13,27 +13,27 @@
         <h3>Create an Account</h3>
       </div>
       <div class="at-pwd-form text-left">
-        <form role="form" id="register-form" novalidate="" action="#" method="POST">
+        <form role="form" id="register-form" action="#" method="POST">
           <fieldset>
             <div class="at-input form-group">
               <label class="control-label" for="account-email">
                 Email
               </label>
-              <input type="email" class="form-control" id="account-email" name="at-field-email" placeholder="Email" autocapitalize="none" autocorrect="off">
+              <input type="email" class="form-control" id="account-email" name="at-field-email" placeholder="Email" autocapitalize="none" required>
               <span class="help-block hide"></span>
             </div>
             <div class="at-input form-group">
               <label class="control-label" for="account-password">
                 Password
               </label>
-              <input type="password" class="form-control" id="account-password" name="at-field-password" placeholder="Password" autocapitalize="none" autocorrect="off">
+              <input type="password" class="form-control" id="account-password" name="at-field-password" placeholder="Password" autocapitalize="none" autocorrect="off" required>
               <span class="help-block hide"></span>
             </div>
             <div class="at-input form-group">
               <label class="control-label" for="account-firstName">
                 First Name
               </label>
-              <input type="text" class="form-control" id="account-firstName" name="at-field-firstName" placeholder="First Name" autocapitalize="none" autocorrect="off">
+              <input type="text" class="form-control" id="account-firstName" name="at-field-firstName" placeholder="First Name" required>
               <span class="help-block hide"></span>
             </div>
             <input type="hidden" id="account-organization-id" value="{{organizationId}}">

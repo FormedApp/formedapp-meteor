@@ -18,6 +18,10 @@ Template.user.helpers({
 	currentUserEmail: function() {
 		return Meteor.user().emails[0].address;
 	},
+	organizationUserCount: function() {
+		var orgName = Meteor.user().profile.organization;
+		return Organizations.findOne({name: orgName},{_id: 1}).userCount;
+	},
 	organizationInviteLink: function() {
 		var orgName = Meteor.user().profile.organization;
 		// find organization

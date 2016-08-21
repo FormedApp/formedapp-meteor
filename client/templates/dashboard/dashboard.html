@@ -1,23 +1,57 @@
 <template name="dashboard">
   <div class="template-dashboard">
     <div class="page-header">
-      <h1>User Board</h1>
+      <h1>Super Admin Dashboard</h1>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-md-3">
           <p class="stat-num text-center">{{usersCount}}</p>
-          <p class="text-center">Users</p>
+          <p class="text-center"># of Users</p>
         </div>
-      </div>
-      <div class="page-header">
-        <h2>Posts</h2>
-      </div>
-      <div class="row">
         <div class="col-md-3">
           <p class="stat-num text-center">{{postsCount}}</p>
-          <p class="text-center">Total</p>
+          <p class="text-center"># of Posts</p>
         </div>
+        <div class="col-md-3">
+          <p class="stat-num text-center">{{organizationsCount}}</p>
+          <p class="text-center"># of Organizations</p>
+        </div>
+      </div>
+      
+      <div class="page-header">
+        
+      </div>
+      <div class="row">
+        
+      </div>
+
+      <div class="page-header">
+        <h2>Organizations</h2>
+      </div>
+      <div class="col-md-12">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Organization</th>
+              <th>Admin</th>
+              <th>Email</th>
+              <th>Users</th>
+              <th>Posts</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each organizations}}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{createdByName}}</td>
+                <td>{{createdByEmail}}</td>
+                <td>{{userCount}}</td>
+                <td>postCount</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

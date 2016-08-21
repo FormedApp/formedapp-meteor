@@ -7,7 +7,9 @@
         </div>
         <span>Name: </span> <span>{{ currentUser.profile.firstName }}</span><br />
         <span>Email: </span> <span>{{ currentUserEmail }}</span><br />
-        <span>Organization: </span> <span>{{ currentUser.profile.organization }}<br><button class="btn btn-primary btn-copy-link" data-clipboard-text="{{ organizationInviteLink }}">Invite Others</button></span>
+        <span>Organization: </span> <span>{{ currentUser.profile.organization }}<br />
+        <span>Number of users: {{organizationUserCount}}</span><br />
+        <button class="btn btn-primary btn-copy-link" data-clipboard-text="{{ organizationInviteLink }}">Invite Others</button></span>
       </div>
     </div>
   </div>

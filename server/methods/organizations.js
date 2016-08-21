@@ -13,8 +13,6 @@ Meteor.methods({
     check(id, String);
 
     var organization = Organizations.findOne(id);
-
-    var organization = Organizations.findOne(id);
     if (post.createdBy !== Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
@@ -26,5 +24,15 @@ Meteor.methods({
       // If an error occurs, return it to the client.
       return exception;
     }
+  },
+  removeOrganizationUserCount: function (id) {
+    var orgCount = Organizations.findOne({_id: id}).userCount;
+    orgCount--;
+    Organizations.update(id, {$set : { "userCount" : orgCount }});
+  },
+  addOrganizationUserCount: function (id) {
+    var orgCount = Organizations.findOne({_id: id}).userCount;
+    orgCount++;
+    Organizations.update(id, {$set : { "userCount" : orgCount }});
   }
 });

@@ -1,5 +1,5 @@
 // server: publish the current size of your post collection
-Meteor.publish("postCounts", function () {
+Meteor.publish("postsCount", function () {
   var self = this;
   var count = 0;
   var initializing = true;
@@ -8,17 +8,17 @@ Meteor.publish("postCounts", function () {
     added: function (id) {
       count++;
       if (!initializing)
-        self.changed("stats", 'postCounts', {count: count});
+        self.changed("stats", 'postsCount', {count: count});
     },
     removed: function (id) {
       count--;
-      self.changed("stats", 'postCounts', {count: count});
+      self.changed("stats", 'postsCount', {count: count});
     }
 
   });
 
   initializing = false;
-  self.added("stats", 'postCounts', {count: count});
+  self.added("stats", 'postsCount', {count: count});
   self.ready();
 
   self.onStop(function () {

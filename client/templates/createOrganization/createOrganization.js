@@ -17,8 +17,10 @@ Template.createOrganization.events({
     // Insert a organization into the collection
     Organizations.insert({
       name: organizationName, //name must be unique (see server method)
+      userCount: 1, // first user
       createdBy: Meteor.userId(),
       createdByName: user.profile.firstName,
+      createdByEmail: user.emails[0].address,
       createdAt: new Date() // current time
     }, function( error, result) { 
       if ( error ) {

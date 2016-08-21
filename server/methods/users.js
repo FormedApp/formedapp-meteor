@@ -5,6 +5,7 @@ Meteor.methods({
   },
 	createOrganizationUser: function(options) {
     Accounts.createUser( options );
+    Meteor.call("addOrganizationUserCount", options.profile.organizationId);
   }
 
 });

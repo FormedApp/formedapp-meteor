@@ -7,9 +7,12 @@
         </div>
         <span>Name: </span> <span>{{ currentUser.profile.firstName }}</span><br />
         <span>Email: </span> <span>{{ currentUserEmail }}</span><br />
-        <span>Organization: </span> <span>{{ currentUser.profile.organization }}<br />
+        <span>Organization: </span> <span>{{ currentUser.profile.organizationName }}<br />
         <span>Number of users: {{organizationUserCount}}</span><br />
         <button class="btn btn-primary btn-copy-link" data-clipboard-text="{{ organizationInviteLink }}">Invite Others</button></span>
+      </div>
+      <div class="col-md-3">
+        <a href="/create-group" class="btn btn-primary">Add New Group</a>
       </div>
     </div>
   </div>

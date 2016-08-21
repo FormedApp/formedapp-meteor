@@ -38,6 +38,9 @@ Router.route('/journal', {
 Router.route('/create-organization', {
   name: 'createOrganization'
 });
+Router.route('/create-group', {
+  name: 'createGroup'
+});
 
 Router.route('/invite/:orgId', {
   name: 'invite',

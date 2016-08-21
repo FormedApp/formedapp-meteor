@@ -7,6 +7,8 @@ Tracker.autorun(function () {
   // Meteor.subscribe("postMonthCounts");
   Meteor.subscribe("organizationsCount");
   Meteor.subscribe("organizations");
+  Meteor.subscribe("groupsCount");
+  Meteor.subscribe("groups");
 });
 
 Template.dashboard.rendered = function() {
@@ -25,5 +27,11 @@ Template.dashboard.helpers({
 	},
 	organizations: function() {
 		return Organizations.find({}, {sort:{ userCount: -1 }});
+	},
+	groupsCount: function() {
+		return Stats.findOne({_id: "groupsCount"}).count;
+	},
+	groups: function() {
+		return Groups.find({}, {sort:{ groupCount: -1 }});
 	}
 });

@@ -1,0 +1,15 @@
+<template name="listMyGroups">
+  <div class="template-listMyGroups list">
+    {{#each groups}}
+      
+      <a href="#">
+        <div class="list-block">
+          <h3>{{name}}</h3>
+          <p>Teacher: {{currentTeacherName}}</p>
+          <p>Member count: {{usersCount}}</p>
+        </div>
+      </a>
+      
+    {{/each}}
+  </div>
+</template>

@@ -59,16 +59,29 @@ body {
 	background: @grey;
 	font-family: @source;
 }
-a:hover {
-	text-decoration: none; 
+a {
+	color: @dark-red;
+	&:hover {
+		text-decoration: none; 
+	}
 }
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: @patua;
 }
 svg {
 	width: 35px;
 }
-
+.list {
+	a {
+		coursor: pointer;
+	}
+	.list-block {
+	  padding: 1px 17px 5px;
+		background: white;
+		margin: 16px 0 0 0;
+	}
+}
 
 ////
 //nav

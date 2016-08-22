@@ -17,13 +17,10 @@ Template.createGroup.events({
     // Insert a organization into the collection
     Groups.insert({
       name: groupName, //name must be unique (see server method)
-      userCount: 1, // first user
+      usersCount: 1, // first user
       createdBy: Meteor.userId(),
-      createdByName: user.profile.firstName,
-      createdByEmail: user.emails[0].address,
       teacherId: Meteor.userId(),
-      teacherName: user.profile.firstName,
-      organizationName: user.profile.organizationName,
+      organizationId: user.profile.organizationId,
       createdAt: new Date() // current time
     }, function( error, result) { 
       if ( error ) {
@@ -35,16 +32,17 @@ Template.createGroup.events({
       if ( result ) {
         Bert.alert( 'Success! '+ groupName +' has been added as a new group.', 'success' );
         console.log ( result ); //the _id of new object if successful
+        if (!errorState) {
+          // update user
+          Meteor.call('addUserToGroup', result); //user.js
+          // update organization
+          Meteor.call('addGroupToOrganization', user.profile.organizationId); //oranization.js
+        }
         Router.go('/user');
       }
     });
-
-    if (!errorState) {
-      // update user
-      Meteor.call('updateGroupName', groupName);
-    }
  
     // Clear form
-    target.orgName.value = '';
+    target.groupName.value = '';
   },
 });

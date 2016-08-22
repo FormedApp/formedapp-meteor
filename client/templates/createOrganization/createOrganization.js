@@ -17,10 +17,9 @@ Template.createOrganization.events({
     // Insert a organization into the collection
     Organizations.insert({
       name: organizationName, //name must be unique (see server method)
-      userCount: 1, // first user
+      usersCount: 1, // first user
+      groupsCount: 0,
       createdBy: Meteor.userId(),
-      createdByName: user.profile.firstName,
-      createdByEmail: user.emails[0].address,
       createdAt: new Date() // current time
     }, function( error, result) { 
       if ( error ) {
@@ -33,13 +32,12 @@ Template.createOrganization.events({
         Bert.alert( 'Success! '+ organizationName +' has been added as an organization.', 'success' );
         console.log ( result ); //the _id of new object if successful
         Router.go('/user');
+        if (!errorState) {
+          // update user
+          Meteor.call('updateUserOrganizationId', result);
+        }
       }
     });
-
-    if (!errorState) {
-      // update user
-      Meteor.call('updateUserOrganizationName', organizationName);
-    }
  
     // Clear form
     target.orgName.value = '';

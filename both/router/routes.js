@@ -1,6 +1,6 @@
 //login rules
 Router.onBeforeAction(function() {
-  if (! Meteor.userId()) {
+  if (!Meteor.userId()) {
     Router.go('/');
   } else {
     this.next();
@@ -11,42 +11,67 @@ only: ['dashboard','activities','journal','community','create-organization']
 });
 
 Router.route('/', {
-  name: 'home'
+  name: 'home',
+  waitOn: function() {
+    console.log('Route: home');
+  }
 });
 
 Router.route('/dashboard', {
   name: 'dashboard',
+  waitOn: function() {
+    console.log('Route: dashboard');
+  },
   controller: 'DashboardController'
 });
 
 Router.route('/user', {
-  name: 'user'
+  name: 'user',
+  waitOn: function() {
+    console.log('Route: user');
+  }
 });
 
 Router.route('/activities', {
-  name: 'activities'
+  name: 'activities',
+  waitOn: function() {
+    console.log('Route: activities');
+  }
 });
 
 Router.route('/community', {
-  name: 'community'
+  name: 'community',
+  waitOn: function() {
+    console.log('Route: community');
+  }
 });
 
 Router.route('/journal', {
-  name: 'journal'
+  name: 'journal',
+  waitOn: function() {
+    console.log('Route: journal');
+  }
 });
 
 Router.route('/create-organization', {
-  name: 'createOrganization'
+  name: 'createOrganization',
+  waitOn: function() {
+    console.log('Route: createOrganization');
+  }
 });
 Router.route('/create-group', {
-  name: 'createGroup'
+  name: 'createGroup',
+  waitOn: function() {
+    console.log('Route: createGroup');
+  }
 });
 
 Router.route('/invite/:orgId', {
   name: 'invite',
   waitOn: function() {
-      var that = this;
-      return Meteor.subscribe('organizations');
+    var that = this;
+    return Meteor.subscribe('organizations');
+    console.log('Route: invite');
   },
   data: function () { 
     var orgid = this.params.orgId;

@@ -16,20 +16,11 @@ Accounts.onLogin(function(doc) {
     }
     // ELSE omitted intentionally
     
-    if (!userObject.profile.hasOwnProperty("organization")) {
-
-        // record weird organization name
-	    Meteor.users.update(userObject._id, { $set:{
-	        "profile.organization": "somethingWeird-1234u237hnhup48hp4",
-	    }});
-    }
     if (!userObject.profile.hasOwnProperty("organizationId")) {
 
-        var orgId = Organizations.findOne({name: userObject.profile.organization},{_id: 1});
-
-        // record weird organization name
-        Meteor.users.update(userObject._id, { $set:{
-            "profile.organizationId": orgId._id,
-        }});
+        // record weird organization id
+	    Meteor.users.update(userObject._id, { $set:{
+	        "profile.organizationId": "somethingWeird-1234u237hnhup48hp4",
+	    }});
     }
 });

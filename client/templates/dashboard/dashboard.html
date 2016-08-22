@@ -33,60 +33,13 @@
       <div class="page-header">
         <h2>Organizations</h2>
       </div>
-      <div class="col-md-12">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Organization</th>
-              <th>Admin</th>
-              <th>Email</th>
-              <th>Users</th>
-              <th>Groups</th>
-              <th>Posts</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each organizations}}
-              <tr>
-                <td>{{name}}</td>
-                <td>{{createdByName}}</td>
-                <td>{{createdByEmail}}</td>
-                <td>{{usersCount}}</td>
-                <td>{{groupsCount}}</td>
-                <td>postCount</td>
-              </tr>
-            {{/each}}
-          </tbody>
-        </table>
-      </div>
+      {{> listOrganizations}}
 
       <div class="page-header">
         <h2>Groups</h2>
       </div>
-      <div class="col-md-12">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Group</th>
-              <th>Teacher</th>
-              <th>Organization</th>
-              <th>Users</th>
-              <th>Posts</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each groups}}
-              <tr>
-                <td>{{name}}</td>
-                <td>{{teacherName}}</td>
-                <td>{{organizationName}}</td>
-                <td>{{usersCount}}</td>
-                <td>postCount</td>
-              </tr>
-            {{/each}}
-          </tbody>
-        </table>
-      </div>
+      {{> listGroups}}
+
     </div>
   </div>
 </template>

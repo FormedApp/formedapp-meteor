@@ -1,0 +1,30 @@
+<template name="listOrganizations">
+  <div class="template-listOrganizations">
+    <div class="col-md-12">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Organization</th>
+              <th>Admin</th>
+              <th>Email</th>
+              <th>Users</th>
+              <th>Groups</th>
+              <th>Posts</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each organizations}}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{currentLeaderName}}</td>
+                <td>{{currentLeaderEmail}}</td>
+                <td>{{usersCount}}</td>
+                <td>{{groupsCount}}</td>
+                <td>postCount</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+  </div>
+</template>

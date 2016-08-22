@@ -26,13 +26,18 @@ Meteor.methods({
     }
   },
   removeOrganizationUserCount: function (id) {
-    var orgCount = Organizations.findOne({_id: id}).userCount;
+    var orgCount = Organizations.findOne({_id: id}).usersCount;
     orgCount--;
-    Organizations.update(id, {$set : { "userCount" : orgCount }});
+    Organizations.update(id, {$set : { "usersCount" : orgCount }});
   },
   addOrganizationUserCount: function (id) {
-    var orgCount = Organizations.findOne({_id: id}).userCount;
+    var orgCount = Organizations.findOne({_id: id}).usersCount;
     orgCount++;
-    Organizations.update(id, {$set : { "userCount" : orgCount }});
+    Organizations.update(id, {$set : { "usersCount" : orgCount }});
+  },
+  addGroupToOrganization: function (id) {
+    var groupsCount = Organizations.findOne({_id: id}).groupsCount;
+    groupsCount++;
+    Organizations.update(id, {$set : { "groupsCount" : groupsCount }});
   }
 });

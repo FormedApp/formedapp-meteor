@@ -4,7 +4,7 @@ Template.home.onCreated(function(){
 });
 
 Template.home.rendered = function() {
-	if(Meteor.user().profile.organization === "somethingWeird-1234u237hnhup48hp4") {
+	if(Meteor.user().profile.organizationId === "somethingWeird-1234u237hnhup48hp4") {
 		Router.go('/create-organization');
 	}
 };

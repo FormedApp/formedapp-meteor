@@ -18,16 +18,17 @@ Template.user.helpers({
 	currentUserEmail: function() {
 		return Meteor.user().emails[0].address;
 	},
-	organizationUserCount: function() {
-		var orgName = Meteor.user().profile.organization;
-		return Organizations.findOne({name: orgName},{_id: 1}).userCount;
+	organizationUsersCount: function() {
+		var orgId = Meteor.user().profile.organizationId;
+		return Organizations.findOne({_id: orgId},{_id: 1}).usersCount;
+	},
+	organizationName: function() {
+		var orgId = Meteor.user().profile.organizationId;
+		return Organizations.findOne({_id: orgId},{_id: 1}).name;
 	},
 	organizationInviteLink: function() {
-		var orgName = Meteor.user().profile.organization;
 		// find organization
-		var orgId = Organizations.findOne({name: orgName},{_id: 1});
-		// grab just the  orginization _id
-		orgId = orgId._id;
+		var orgId = Meteor.user().profile.organizationId;
 		// for heroku live site invite link
 		var link = 'http://formed-meteor.herokuapp.com/invite/' + orgId;
 		// for local testing invite link

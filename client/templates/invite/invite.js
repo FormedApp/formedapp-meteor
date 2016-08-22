@@ -29,8 +29,7 @@ Template.invite.helpers({
 		var orgId = this._id;
 		
 		// find organization of currentUser
-		var orgName = Meteor.user().profile.organization;
-		var usersOrgId = Organizations.findOne({name: orgName},{_id: 1});
+		var usersOrgId = Meteor.user().profile.organizationId;
 
 		if (orgId == usersOrgId._id) {
 			return true;

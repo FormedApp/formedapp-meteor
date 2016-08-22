@@ -66,6 +66,25 @@ Router.route('/create-group', {
   }
 });
 
+Router.route('/group/:groupId', {
+  name: 'group',
+  waitOn: function() {
+    var that = this;
+    return Meteor.subscribe('organizations');
+    console.log('Route: invite');
+  },
+  data: function () { 
+    var groupId = this.params.groupId;
+    var data = Groups.findOne({_id: groupId});
+    if(data !== undefined) {
+      return data ;
+    }
+    else {
+      this.render('notFound');
+    }
+  }
+});
+
 Router.route('/invite/:orgId', {
   name: 'invite',
   waitOn: function() {

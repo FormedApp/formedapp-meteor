@@ -6,7 +6,15 @@
           {{#if ifCurrentUser}}
             {{#if ifCurrentUserOrganizationAndGroup}}
             <h1>{{groupName}}</h1>
-            <p>## show profile details ##</p>
+            
+            <h2>Members</h2>
+            {{> listGroupMembers}}
+
+            <h2>Course</h2>
+            <p>## thumbnail ##</p>
+            <p>## course name ##</p>
+            <p>## description ##</p>
+            <p>## show group's course progress ##</p>
             {{else}}
             <h1>You don't have access to this group.</h1>
             <p>Try going back to your profile to see the <a href="/user">Groups you can view.</a></p>

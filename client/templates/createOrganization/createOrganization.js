@@ -31,7 +31,7 @@ Template.createOrganization.events({
       if ( result ) {
         Bert.alert( 'Success! '+ organizationName +' has been added as an organization.', 'success' );
         console.log ( result ); //the _id of new object if successful
-        Router.go('/user');
+        Router.go('/profile');
         if (!errorState) {
           // update user
           Meteor.call('updateUserOrganizationId', result);

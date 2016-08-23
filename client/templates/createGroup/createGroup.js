@@ -34,11 +34,11 @@ Template.createGroup.events({
         console.log ( result ); //the _id of new object if successful
         if (!errorState) {
           // update user
-          Meteor.call('addUserToGroup', result); //user.js
+          Meteor.call('addUserToGroup', result); //profile.js
           // update organization
           Meteor.call('addGroupToOrganization', user.profile.organizationId); //oranization.js
         }
-        Router.go('/user');
+        Router.go('/profile');
       }
     });
  

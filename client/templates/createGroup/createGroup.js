@@ -1,6 +1,17 @@
+Tracker.autorun(function () {
+  Meteor.subscribe('organizations');
+});
+
 Template.createGroup.rendered = function() {
 
 };
+
+Template.createGroup.helpers({
+  organizationName: function() {
+    var orgId = Meteor.user().profile.organizationId;
+    return Organizations.findOne({_id: orgId}).name;
+  }
+});
 
 Template.createGroup.events({
 'submit .addGroup':function(event) {

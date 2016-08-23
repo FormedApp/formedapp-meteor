@@ -12,6 +12,6 @@ Template.listGroupMembers.helpers({
 	members: function() {
 		// grab group id from URL
 		var groupId = this._id;
-		return Meteor.users.find();
+		return Meteor.users.find({"profile.groups":groupId});
 	}
 });

@@ -70,8 +70,8 @@ Router.route('/group/:groupId', {
   name: 'group',
   waitOn: function() {
     var that = this;
-    return Meteor.subscribe('organizations');
-    console.log('Route: invite');
+    return Meteor.subscribe('groups');
+    console.log('Route: group');
   },
   data: function () { 
     var groupId = this.params.groupId;
@@ -85,10 +85,27 @@ Router.route('/group/:groupId', {
   }
 });
 
+Router.route('/member/:memberId', {
+  name: 'member',
+  waitOn: function() {
+    return Meteor.subscribe('users');
+    console.log('Route: member');
+  },
+  data: function () { 
+    var memberId = this.params.memberId;
+    var data = Meteor.users.findOne({_id: memberId});
+    if(data !== undefined) {
+      return data ;
+    }
+    else {
+      this.render('notFound');
+    }
+  }
+});
+
 Router.route('/invite/:orgId', {
   name: 'invite',
   waitOn: function() {
-    var that = this;
     return Meteor.subscribe('organizations');
     console.log('Route: invite');
   },

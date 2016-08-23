@@ -15,6 +15,12 @@ Template.group.helpers({
 		var groupId = this._id;
 		return Groups.findOne({_id: groupId},{id: 1}).name;
 	},
+	usersCount: function() {
+		// get group's name that user has access to
+		// url _id
+		var groupId = this._id;
+		return Groups.findOne({_id: groupId},{id: 1}).usersCount;
+	},
 	ifGroupExists: function() {
 		// id from /group URL
 		var groupId = this._id;

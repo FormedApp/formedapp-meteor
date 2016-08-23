@@ -25,10 +25,10 @@ Router.route('/dashboard', {
   controller: 'DashboardController'
 });
 
-Router.route('/user', {
-  name: 'user',
+Router.route('/profile', {
+  name: 'profile',
   waitOn: function() {
-    console.log('Route: user');
+    console.log('Route: profile');
   }
 });
 

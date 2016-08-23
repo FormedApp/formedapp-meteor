@@ -3,18 +3,18 @@ Tracker.autorun(function () {
   
 });
 
-Template.user.onCreated(function(){
+Template.profile.onCreated(function(){
     // Subscribe to our Leaders organizations publication.
     this.subscribe('organizations');
 });
 
-Template.user.rendered = function() {
+Template.profile.rendered = function() {
 	// see clipboard.js in index.html
 	// idea source: https://wsvincent.com/clipboard-js-for-meteor/
 	var clipboard = new Clipboard('.btn-copy-link');
 };
 
-Template.user.helpers({
+Template.profile.helpers({
 	currentUserEmail: function() {
 		return Meteor.user().emails[0].address;
 	},
@@ -37,7 +37,7 @@ Template.user.helpers({
 	}
 });
 
-Template.user.events({
+Template.profile.events({
 'click .btn-copy-link':function(event) {
     // copied to clipboard message
     Bert.alert( '<strong><i class="fa fa-link"></i>&nbsp;&nbsp;Share it with the world!</strong> Your share link copied to your clipboard.', 'success' ); 

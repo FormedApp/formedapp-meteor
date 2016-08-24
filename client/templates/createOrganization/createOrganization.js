@@ -19,6 +19,7 @@ Template.createOrganization.events({
       name: organizationName, //name must be unique (see server method)
       usersCount: 1, // first user
       groupsCount: 0,
+      leaders: [Meteor.userId()],
       createdBy: Meteor.userId(),
       createdAt: new Date() // current time
     }, function( error, result) { 

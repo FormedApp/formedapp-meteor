@@ -5,7 +5,7 @@
         {{#if ifGroupExists}}
           {{#if ifCurrentUser}}
             {{#if ifCurrentUserOrganizationAndGroup}}
-            <h1>{{groupName}}</h1>
+            <h1>{{groupName}} <span class="pull-right"><a href="/group/{{this._id}}/invite" class="btn btn-primary">Invite Members</a></span></h1>
             
             <h2>Members <span class="pull-right">{{usersCount}}</span></h2>
             {{> listGroupMembers}}
